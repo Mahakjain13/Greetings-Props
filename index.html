@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Web Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+    
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #3f51b5;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+       
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+       
+        h3 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        h3::after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 2px;
+            background-color: #ff6347;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div id="root">Change is imminent!</div>
+
+            <script type="text/babel">
+                let rootNode = ReactDOM.createRoot(document.getElementById("root"));
+
+                class ClassHelloProps extends React.Component {
+                    render() {
+                        return (
+                            <h3>
+                                Hi I'm {this.props.name}!<br />
+                                I am {this.props.age} years old <br />
+                                Do I eat Veg? {this.props.vegeating}
+                            </h3>
+                        );
+                    }
+                }
+
+                rootNode.render(<ClassHelloProps name="Mahak" age="23" vegeating="Yes" />);
+            </script>
+        </div>
+    </div>
+</body>
+</html>
